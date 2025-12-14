@@ -1,23 +1,19 @@
-# 💬 ChattingApplication
+# ChattingApplication
 
 A simple socket-based client-server chat application written in Python. This project demonstrates basic networking concepts using TCP sockets and threading, allowing multiple clients to connect to a single server, send messages, and receive responses in real-time.
 
----
+## Key Features
 
-## 🧠 Key Features
+- Multi-client support via threading
+- Client name auto-assignment on connection
+- Server responds to client messages with uppercase echo
+- Graceful disconnection with `"CLOSE SOCKET"` command
+- Real-time console logging of chat events
+- Bi-directional messaging between server and clients
 
-- ✅ Multi-client support via threading
-- ✅ Client name auto-assignment on connection
-- ✅ Server responds to client messages with uppercase echo
-- ✅ Graceful disconnection with `"CLOSE SOCKET"` command
-- ✅ Real-time console logging of chat events
-- ✅ Bi-directional messaging between server and clients
+## Project Structure
 
----
-
-## 📁 Project Structure
-
-```
+```text
 ChattingApplication/
 ├── client.py   # Client-side logic (connect, send/receive, close)
 ├── server.py   # Server-side logic (listen, handle clients, broadcast)
@@ -25,9 +21,7 @@ ChattingApplication/
 └── .idea/      # IDE config folder (can be ignored)
 ```
 
----
-
-## 🚀 How to Run
+## How to Run
 
 ### 1. Start the Server
 
@@ -41,7 +35,7 @@ The server will start listening on `localhost:56040` and wait for incoming clien
 
 ### 2. Start a Client
 
-In a **new terminal window**, run:
+In a new terminal window, run:
 
 ```bash
 python client.py
@@ -49,32 +43,21 @@ python client.py
 
 You will be prompted to enter the server IP (type `localhost` or `127.0.0.1` for local testing), then type `CONNECT` to join the server.
 
-You can open **multiple terminals** and repeat the process to connect multiple clients concurrently.
+You can open multiple terminals and repeat the process to connect multiple clients concurrently.
 
----
+## Commands
 
-## 💬 Commands
+- Send any message to the server: the server will echo it back in **UPPERCASE**.
+- Type `CLOSE SOCKET` from the client: gracefully disconnects from the server.
+- Type messages directly in the server terminal: the server can broadcast to all clients as `Server: your message`.
 
-- Send any message to the server:  
-  The server will echo it back in **UPPERCASE**.
-
-- Type `CLOSE SOCKET` from the client:  
-  Gracefully disconnects from the server.
-
-- Type messages directly in the server terminal:  
-  The server can broadcast to all clients as "Server: your message".
-
----
-
-## 🔐 Notes
+## Notes
 
 - All communication is in UTF-8 over TCP.
 - Ports and host settings are hardcoded but can be modified easily.
-- No GUI is implemented — this is a **pure CLI-based chat tool** for educational purposes.
+- No GUI is implemented. This is a CLI-based chat tool for educational purposes.
 
----
-
-## 📚 Educational Goals
+## Educational Goals
 
 This project is ideal for:
 
@@ -83,15 +66,11 @@ This project is ideal for:
 - Practicing message broadcasting and real-time communication
 - Experimenting with TCP/IP protocols
 
----
-
-## 👨‍💻 Author
+## Author
 
 **Mahmoud Elfeel**  
-🔗 [GitHub Profile](https://github.com/mahmoudelfeelig)
+[GitHub Profile](https://github.com/mahmoudelfeelig)
 
----
-
-## 📖 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
